@@ -1,17 +1,14 @@
 class Solution {
-    public boolean checkIfPangram(String sentence) {
-        boolean pangram;
-        
-        char arr[]=sentence.toCharArray();
-         Set<Character> set=new HashSet<>();
-         for(char c : arr){
-            set.add(c);
-         }
-         if(set.size()==26){
-            pangram=true;
-         }else{
-            pangram=false;
-         }
-         return pangram;
+    public boolean checkIfPangram(String s) {
+          if (s.length() < 26) {
+            return false;
+        }
+        for (char i = 'a'; i <= 'z'; i++) {
+            if (s.indexOf(i) == -1) {
+                return false;
+            }
+        }
+        return true;
     }
 }
+    
