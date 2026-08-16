@@ -1,6 +1,6 @@
 class Solution {
     public int[][] flipAndInvertImage(int[][] image) {
-        int [][]arr=new int[image.length][image[0].length];
+        
         for(int i=0;i<image.length;i++){
             int start=0;
             int end=image[i].length-1;
