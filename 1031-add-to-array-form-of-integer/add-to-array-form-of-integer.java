@@ -12,14 +12,14 @@ class Solution {
             }
             
             // Extract the last digit of the combined sum and add it to our list
-            result.add(k % 10);
+            result.add(0,k % 10);
             
             // Carry over the remaining value to the next position
             k /= 10;
         }
 
         // Because we added digits from right to left, reverse the final list
-        Collections.reverse(result);
+        
         return result;
     }
 }
