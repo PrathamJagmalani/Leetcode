@@ -4,17 +4,14 @@ class Solution {
             return mat;
         }
        int reshape[][]=new int[r][c];
-       List<Integer> list =new ArrayList<>();
+     
+       
+       int k=0;
        for(int i=0;i<mat.length;i++){
         for(int j=0;j<mat[0].length;j++){
-          list.add(mat[i][j]);
-        }
-       } 
-       int k=0;
-       for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
             
-           reshape[i][j]=list.get(k++);
+           reshape[k/c][k%c]=mat[i][j];
+           k++;
          }
         }
 
