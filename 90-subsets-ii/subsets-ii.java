@@ -1,7 +1,7 @@
 class Solution {
 
     private static void allSubsets(int[] nums, List<Integer> ans, List<List<Integer>> subsetsWithDup,int i){
-        Arrays.sort(nums);
+        
         if(i == nums.length){
            subsetsWithDup.add(new ArrayList<>(ans)); 
            return;
@@ -19,6 +19,7 @@ class Solution {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         List<List<Integer>> subsetsWithDup=new ArrayList<>();
         List<Integer> ans=new ArrayList<>();
+        Arrays.sort(nums);
 
         allSubsets(nums, ans, subsetsWithDup, 0);
         return subsetsWithDup;
