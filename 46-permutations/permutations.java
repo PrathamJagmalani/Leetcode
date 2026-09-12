@@ -2,7 +2,11 @@ class Solution {
     private void getPerms(int[] nums, int idx, List<List<Integer>> permute){
        
         if(idx == nums.length){
-            permute.add(Arrays.stream(nums).boxed().collect(Collectors.toList()));
+            List<Integer> list=new ArrayList<>();
+            for(int n : nums){
+                list.add(n);
+            }
+            permute.add(list);
             return;
         }
         for(int i=idx;i<nums.length;i++){
