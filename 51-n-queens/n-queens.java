@@ -1,19 +1,19 @@
 class Solution {
     public static boolean isSafe(String board[][],int row,int col,int n){
         for(int i=0;i<n;i++){
-            if(board[row][i]=="Q") return false;
+            if(board[row][i].equals("Q")) return false;
         }
         
         for(int i=0;i<n;i++){
-            if(board[i][col]=="Q") return false;
+            if(board[i][col].equals("Q")) return false;
         }
 
         for(int i=row,j=col;i>=0 && j>=0;i--,j--){
-            if(board[i][j]=="Q") return false;
+            if(board[i][j].equals("Q")) return false;
         }
 
         for(int i=row,j=col;i>=0 && j<n;i--,j++){
-            if(board[i][j]=="Q") return false;
+            if(board[i][j].equals("Q")) return false;
         }
 
         return true;
