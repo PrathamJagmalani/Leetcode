@@ -1,14 +1,14 @@
 class Solution {
     public boolean isPowerOfTwo(int n) {
         if(n<=0)return false;
-       return PowerOfTwo(n,1);
+       return checkPower(n,1);
     }
 
-    public boolean PowerOfTwo(int n,long x) {
-        if(x == n)return true;
-        if(x>n)return false;
+    public boolean checkPower(int n,long currentPower) {
+        if(currentPower == n)return true;
+        if(currentPower>n)return false;
 
-        return PowerOfTwo(n,x*2);
+        return checkPower(n,currentPower*2);
         
     }
 }
