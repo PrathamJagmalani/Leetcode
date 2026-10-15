@@ -1,13 +1,10 @@
 class Solution {
     public boolean isPowerOfThree(int n) {
         if(n<=0) return false;
-        return checkPower(n,1);
-    }
 
-    public boolean checkPower(int n, long currentPower){
-        if(currentPower==n)return true;
-        if(currentPower>n)return false;
+        while(n%3==0) n/=3;
 
-        return checkPower(n , currentPower*3);
+        return n==1;
+        
     }
 }
