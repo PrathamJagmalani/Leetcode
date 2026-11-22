@@ -4,22 +4,22 @@ class Solution {
         for(int d : digits){
            freq[d]++;
         }
-        List<Integer> list=new ArrayList<>();
-       for(int i=100;i<=998;i+=2){
-          int a=i/100,b=(i/10)%10,c=i%10;
-          int[] local = new int[10];
-          local[a]++;
-          local[b]++;
-          local[c]++;
-          boolean valid = true;
-          for(int j=0;j<10;j++){
-          if(local[j]>freq[j]){
-            valid = false;
-            break;
+        int count =0;
+        for(int i=1;i<=9;i++){
+            if(freq[i]==0)continue;
+            freq[i]--;
+
+            for(int j=0;j<=9;j++){
+                if(freq[j]==0)continue;
+                freq[j]--;
+
+                for(int k=0;k<=8;k+=2){
+                    if(freq[k]>0)count++;
+                }
+                freq[j]++;
             }
-          }
-          if(valid)list.add(i);
-       } 
-       return list.size();
+            freq[i]++;
+        }
+        return count;
     }
 }
