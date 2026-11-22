@@ -4,7 +4,7 @@ class Solution {
             int mid=st+(end-st)/2;
 
             if(nums[mid] == tar)return mid;
-            else if(nums[mid] <= tar)return helper(nums, tar, mid+1, end);
+            else if(nums[mid] < tar)return helper(nums, tar, mid+1, end);
             else return helper(nums, tar, st, mid-1);
         }
         return -1;
